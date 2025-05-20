@@ -18,14 +18,14 @@
 
 @font-face {
   font-family: "by7b";
-  src: url("/5by7_b.ttf") format("truetype");
+  src: url("./5by7_b.ttf") format("truetype"); /* relative path */
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "by7";
-  src: url("/5by7.ttf") format("truetype");
+  src: url("./5by7.ttf") format("truetype"); /* relative path */
   font-weight: normal;
   font-style: normal;
 }
@@ -53,9 +53,7 @@
   font-family: "by7b", sans-serif;
 }
 
-.dot {
-  font-family: "dot", sans-serif;
-}
+
 
 .p2 {
   font-family: "p2", sans-serif;
