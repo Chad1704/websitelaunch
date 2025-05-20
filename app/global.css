@@ -14,33 +14,23 @@
   --color-border: 173, 239, 209;
 }
 
-@font-face {
-  font-family: "dot";
-  src: url("/fonts/DOTFONTS.TTF") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 @font-face {
   font-family: "by7b";
-  src: url("/fonts/by7_b.ttf") format("truetype");
+  src: url("/5by7_b.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "by7";
-  src: url("/fonts/by7.ttf") format("truetype");
+  src: url("/5by7.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "p2";
-  src: url("/fonts/PressStart2P-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 /* ASCII Drift text container */
 .animate-ascii-drift {
