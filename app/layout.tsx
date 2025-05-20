@@ -14,7 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/frog2.png" type="image/png" />
+<link rel="icon" href="/frog2.png" type="image/png" />
+
       </head>
       <body>{children}</body>
     </html>
