@@ -15,20 +15,20 @@
 }
 
 
-
 @font-face {
   font-family: "by7b";
-  src: url("./5by7_b.ttf") format("truetype"); /* relative path */
+  src: url("/5by7_b.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "by7";
-  src: url("./5by7.ttf") format("truetype"); /* relative path */
+  src: url("/5by7.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
 
 
 
