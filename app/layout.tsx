@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './global.css';
 
 export const metadata: Metadata = {
-  title: 'TEST',
-  description: 'Deploy your static Next.js site to GitHub Pages.',
+  title: 'Chad Katz',
+  description: "Chad Katz's Web Porfolio.",
 };
 
 export default function RootLayout({
@@ -13,6 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/frog2.png" type="image/png" />
+      </head>
       <body>{children}</body>
     </html>
   );
