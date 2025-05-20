@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "by7b";
+  src: url("/5by7_b.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "tailwindcss";
 
 
@@ -18,12 +25,7 @@
 
 
 
-@font-face {
-  font-family: "by7b";
-  src: url("/5by7_b.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 @font-face {
   font-family: "by7";
