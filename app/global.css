@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
 @font-face {
   font-family: "by7";
   src: url("/fonts/5by7.ttf") format("truetype");
@@ -70,7 +76,12 @@ font-family: "Space Mono", monospace;
 }
 
 .by7 {
-  font-family: "by7", sans-serif;
+   font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
 }
 
 .by7b {
