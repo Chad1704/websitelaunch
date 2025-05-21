@@ -23,12 +23,12 @@ function Hero() {
 
         <div className="flex flex-col row-start-5 lg:row-start-7 col-start-2 col-span-8 justify-center row-span-2 ">
           <div className="text-3xl text-left header text-light lg:pt-3 align-middle by7">
-            <div className="text-light text-3xl  duration-400 ease-in-out transition">Chad Katz</div>
+            <div className="text-light text-3xl  duration-400  ease-in-out transition">Chad Katz</div>
           </div>
         </div>
 
         <div className="flex flex-col row-start-8 lg:row-start-9 justify-center sm:row-start-8 text-light col-start-2 col-span-12 row-span-4 transition-transform duration-200 ease-in-out">
-          <div className="text-4xl by7 align-middle  duration-400 ease-in-out transition">
+          <div className="text-4xl align-middle  duration-400 ease-in-out rubik transition">
             Web Developer | Digital Creator | Problem Solver
           </div>
         </div>
