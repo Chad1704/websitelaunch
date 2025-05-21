@@ -17,7 +17,7 @@ function Links() {
           </div>
         </a>
         <a
-          href="https://github.com/Chad1704"
+          href="/Blog"
           target="_blank"
           rel="noopener noreferrer"
         >
