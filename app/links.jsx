@@ -52,6 +52,15 @@ function Links() {
             Resume
           </div>
         </a>
+         <a
+          href="/404"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Youtube
+          </div>
+        </a>
       </div>
     </div>
   );
