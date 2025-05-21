@@ -1,21 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @font-face {
   font-family: "by7";
-  src: url("/websitelaunch/fonts/5by7.ttf") format("truetype");
+  src: url("/fonts/5by7.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "mono";
-  src: url("/websitelaunch/fonts/SpaceMono-Regular.ttf") format("truetype");
+  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "by7b";
-  src: url("/websitelaunch/fonts/5by7_b.ttf") format("truetype");
+  src: url("/fonts/5by7_b.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -58,7 +59,9 @@
 
 
 .font-mono{
-font-family: "mono", sans-serif;
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 
 }
 
