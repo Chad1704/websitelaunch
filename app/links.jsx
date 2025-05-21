@@ -2,7 +2,6 @@
 
 import React from "react";
 
-
 function Links() {
   return (
     <div className="w-full font-mono h-full flex justify-center">
@@ -16,11 +15,7 @@ function Links() {
             Linkedin
           </div>
         </a>
-        <a
-          href="/Blog"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/Blog" target="_blank" rel="noopener noreferrer">
           <div className="linkbar text-center opacity-70 hover:opacity-100">
             Blog
           </div>
@@ -43,20 +38,12 @@ function Links() {
             Email
           </div>
         </a>
-        <a
-          href="/404"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/404" target="_blank" rel="noopener noreferrer">
           <div className="linkbar text-center opacity-70 hover:opacity-100">
             Resume
           </div>
         </a>
-         <a
-          href="/404"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/404" target="_blank" rel="noopener noreferrer">
           <div className="linkbar text-center opacity-70 hover:opacity-100">
             Youtube
           </div>

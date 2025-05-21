@@ -69,7 +69,7 @@ function WithStyles({ title, tags, image, link, desc }) {
           </div>
         </div>
 
-        <div className="relative z-10 flex row-start-7 col-start-9 text-2xl text-dark">
+        <div className="relative z-10 flex row-start-7 duration-400 ease-in-out transition col-start-9 text-2xl text-dark">
           <GoArrowUpRight />
         </div>
       </div>

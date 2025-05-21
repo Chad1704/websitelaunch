@@ -2,11 +2,11 @@
 
 import React from "react";
 
-import Hero from "./hero"
+import Hero from "./hero";
 import About from "./about.jsx";
 import Links from "./links.jsx";
 
-import ProjectsHub from "./ProjectsHub.jsx"
+import ProjectsHub from "./ProjectsHub.jsx";
 import ColorTester from "./colortester.js";
 
 function Landing() {
@@ -43,7 +43,7 @@ function Landing() {
 
           {/* Projects */}
           <div className="overflow-hidden pro-border flex items-center justify-center col-span-9 lg:col-span-8 row-span-3 lg:row-span-4">
-            <ProjectsHub /> 
+            <ProjectsHub />
           </div>
         </div>
       </div>

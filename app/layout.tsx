@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
-import './global.css';
+import type { Metadata } from "next";
+import "./global.css";
 
 export const metadata: Metadata = {
-  title: 'Chad Katz',
+  title: "Chad Katz",
   description: "Chad Katz's Web Porfolio.",
 };
 
@@ -14,10 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-<link rel="icon" href="./favicon.ico" />
-
-
-
+        <link rel="icon" href="./favicon.ico" />
       </head>
       <body>{children}</body>
     </html>
