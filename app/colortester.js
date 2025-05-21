@@ -5,26 +5,31 @@ const colorThemes = [
     light: "#2BAE66FF",
     dark: "#fcf6f5ff",
     border: "43 , 174 , 102 ",
+    name: "Crisp Mint"
   },
   {
     light: "#ADEFD1FF",
     dark: "#00203FFF",
     border: "173, 239, 209",
+    name: "Night Time Sea"
   },
   {
     light: "#FFE6F0",
     dark: "#5C1A72",
     border: "255, 230, 240",
+    name: "Lavender"
   },
   {
     light: "#78BC61",
     dark: "#131200",
     border: "120, 188, 97",
+    name: "Marsh Lily"
   },
   {
     light: "#ffffff",
     dark: "#000000",
     border: "225, 225, 225",
+    name: "B&W"
   },
 ];
 
@@ -83,7 +88,7 @@ export default function ColorTester() {
           <button
             key={i}
             onClick={() => setThemeIndex(i)}
-            title={`Theme ${i + 1}`}
+            title={t.name}
             style={{
               width: 12,
               height: 12,
