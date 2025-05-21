@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Lines&family=Rubik+Maze&family=Rubik+Pixels&display=swap');
-
-
+@font-face {
+  font-family: "by7";
+  src: url("../public/5by7.ttf") format("truetype"); /* relative path */
+}
 
 @import "tailwindcss";
-
 
 @theme {
   --color-light: #2bae66ff;
@@ -17,22 +11,9 @@
   --breakpoint-xs: 30rem;
 }
 
-
-
-
-
 :root {
   --color-border: 173, 239, 209;
 }
-
-
-
-
-
-
-
-
-
 
 /* ASCII Drift text container */
 .animate-ascii-drift {
@@ -43,12 +24,10 @@
   rotate: 90deg;
 }
 
-
-.font-mono{
-font-family: "Space Mono", monospace;
+.font-mono {
+  font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
-
 }
 
 .dot {
@@ -56,9 +35,7 @@ font-family: "Space Mono", monospace;
 }
 
 .by7 {
-font-family: "Chakra Petch", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "by7", sans-serif;
 }
 
 .rubik {
@@ -66,8 +43,6 @@ font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
-
 
 .p2 {
   font-family: "p2", sans-serif;
@@ -304,5 +279,4 @@ body {
   border-top: 0.5px solid rgba(var(--color-border), 0.5);
   border-left: 0.5px solid rgba(var(--color-border), 0.5);
   border-right: 0.5px solid rgba(var(--color-border), 0.5);
-
 }
