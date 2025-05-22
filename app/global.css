@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "plutosans";
+  src: url("../public/plutosans\ \(1\).otf") format("opentype"); /* relative path */
+}
+
+@font-face {
   font-family: "Space Mono";
   src: url("../public/SpaceMono-Regular.ttf") format("truetype"); /* relative path */
 }
@@ -58,6 +63,10 @@
 
 .dot {
   font-family: "dot", sans-serif;
+}
+
+.pluto {
+  font-family: "plutosans", sans-serif;
 }
 
 .by7 {
