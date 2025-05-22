@@ -16,6 +16,14 @@
   --breakpoint-xs: 30rem;
 }
 
+::selection {
+
+    color: var(--color-dark);
+
+    background:var(--color-light);
+    opacity: 1;
+   
+}
 :root {
   --color-border: 173, 239, 209;
 }
