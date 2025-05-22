@@ -16,6 +16,18 @@
   --breakpoint-xs: 30rem;
 }
 
+
+.custom-underline {
+  text-decoration:underline; 
+  text-underline-offset: 8px;
+  transition: text-underline-offset 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-underline:hover {
+  text-underline-offset: 2px;
+}
+
+
 ::selection {
 
     color: var(--color-dark);

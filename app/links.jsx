@@ -11,12 +11,12 @@ function Links() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="linkbar custom-underline text-center opacity-70 hover:opacity-100">
             Linkedin
           </div>
         </a>
         <a href="/Blog" target="_blank" rel="noopener noreferrer">
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="custom-underline linkbar text-center opacity-70 hover:opacity-100">
             Blog
           </div>
         </a>
@@ -25,7 +25,7 @@ function Links() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="linkbar custom-underline text-center opacity-70 hover:opacity-100">
             Github
           </div>
         </a>
@@ -34,17 +34,17 @@ function Links() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="linkbar custom-underline text-center opacity-70 hover:opacity-100">
             Email
           </div>
         </a>
         <a href="/404" target="_blank" rel="noopener noreferrer">
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="linkbar custom-underline text-center opacity-70 hover:opacity-100">
             Resume
           </div>
         </a>
         <a href="/404" target="_blank" rel="noopener noreferrer">
-          <div className="linkbar text-center opacity-70 hover:opacity-100">
+          <div className="linkbar text-center  custom-underline opacity-70 hover:opacity-100">
             Youtube
           </div>
         </a>
