@@ -317,8 +317,26 @@ body {
   border-bottom: 0.5px solid rgba(var(--color-border), 0.5);
 }
 
+.tags-b-border {
+  position: relative;
+}
+
+.tags-b-border::after {
+  content: "";
+  position: absolute;
+  bottom: -15px; /* below text */
+  left: 10%;
+  width: 80%;
+  height: 0.5px;
+  background: rgba(var(--color-border), 0.5) 100%;
+}
+
 .card-head-side-l {
   border-left: 0.5px solid rgba(var(--color-border), 0.5);
+}
+
+.backround-icon {
+  background-color: var(--color-light);
 }
 
 @import "highlight.js/styles/sunburst.css";

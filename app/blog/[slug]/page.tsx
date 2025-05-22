@@ -12,7 +12,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <Header />
       <div className="grid grid-cols-12">
         <div className="col-start-1 col-span-12">
-          <PostLayout tags={metadata.tags} title={metadata.title}>
+          <PostLayout
+            tags={metadata.tags}
+            title={metadata.title}
+            date={metadata.date}
+            time={metadata.time}
+          >
             <Post />
           </PostLayout>
         </div>
