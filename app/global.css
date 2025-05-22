@@ -8,6 +8,11 @@
   src: url("../public/SpaceMono-Regular.ttf") format("truetype"); /* relative path */
 }
 
+@font-face {
+  font-family: "by7_b";
+  src: url("../public/5by7_b.ttf") format("truetype"); /* relative path */
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -16,9 +21,8 @@
   --breakpoint-xs: 30rem;
 }
 
-
 .custom-underline {
-  text-decoration:underline; 
+  text-decoration: underline;
   text-underline-offset: 8px;
   transition: text-underline-offset 0.3s ease, opacity 0.3s ease;
 }
@@ -27,14 +31,11 @@
   text-underline-offset: 2px;
 }
 
-
 ::selection {
+  color: var(--color-dark);
 
-    color: var(--color-dark);
-
-    background:var(--color-light);
-    opacity: 1;
-   
+  background: var(--color-light);
+  opacity: 1;
 }
 :root {
   --color-border: 173, 239, 209;
@@ -61,6 +62,10 @@
 
 .by7 {
   font-family: "by7", sans-serif;
+}
+
+.by7_b {
+  font-family: "by7_b", sans-serif;
 }
 
 .p2 {
@@ -298,5 +303,4 @@ body {
   border-top: 0.5px solid rgba(var(--color-border), 0.5);
   border-left: 0.5px solid rgba(var(--color-border), 0.5);
   border-right: 0.5px solid rgba(var(--color-border), 0.5);
-  
 }
