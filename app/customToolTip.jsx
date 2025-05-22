@@ -7,6 +7,7 @@ export default function CustomTooltipLink({ href, children }) {
     <>
       <a
       
+      className="transition duration-400 ease-in-out"
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -39,6 +40,7 @@ export default function CustomTooltipLink({ href, children }) {
       transition: "opacity 0.2s ease",
       pointerEvents: "none",
       transform: "translateY(100%)", // pushes tooltip *below* bottom edge
+      
     }}
   >
     {href}
