@@ -1,22 +1,16 @@
 @font-face {
   font-family: "by7";
-  src: url("/fonts/5by7.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("../public/5by7.ttf") format("truetype"); /* relative path */
 }
 
 @font-face {
-  font-family: "mono";
-  src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Space Mono";
+  src: url("../public/SpaceMono-Regular.ttf") format("truetype"); /* relative path */
 }
 
 @font-face {
-  font-family: "by7b";
-  src: url("/fonts/5by7_b.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-family: "by7_b";
+  src: url("../public/5by7_b.ttf") format("truetype"); /* relative path */
 }
 
 @import "tailwindcss";
@@ -27,11 +21,25 @@
   --breakpoint-xs: 30rem;
 }
 
+.custom-underline {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  transition: text-underline-offset 0.3s ease, opacity 0.3s ease;
+}
+
+.custom-underline:hover {
+  text-underline-offset: 2px;
+}
+
+::selection {
+  color: var(--color-dark);
+
+  background: var(--color-light);
+  opacity: 1;
+}
 :root {
   --color-border: 173, 239, 209;
 }
-
-@import "highlight.js/styles/sunburst.css";
 
 /* ASCII Drift text container */
 .animate-ascii-drift {
@@ -53,15 +61,11 @@
 }
 
 .by7 {
-  font-family: "Chakra Petch", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "by7", sans-serif;
 }
 
-.rubik {
-  font-family: "Rubik Pixels", system-ui;
-  font-weight: 400;
-  font-style: normal;
+.by7_b {
+  font-family: "by7_b", sans-serif;
 }
 
 .p2 {
@@ -300,3 +304,12 @@ body {
   border-left: 0.5px solid rgba(var(--color-border), 0.5);
   border-right: 0.5px solid rgba(var(--color-border), 0.5);
 }
+.card-head-border {
+  border-bottom: 0.5px solid rgba(var(--color-border), 0.5);
+}
+
+.card-head-side-l {
+  border-left: 0.5px solid rgba(var(--color-border), 0.5);
+}
+
+@import "highlight.js/styles/sunburst.css";
