@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 
 const colorThemes = [
@@ -5,31 +6,31 @@ const colorThemes = [
     light: "#2BAE66FF",
     dark: "#fcf6f5ff",
     border: "43 , 174 , 102 ",
-    name: "Crisp Mint"
+    name: "Crisp Mint",
   },
   {
     light: "#ADEFD1FF",
     dark: "#00203FFF",
     border: "173, 239, 209",
-    name: "Night Time Sea"
+    name: "Night Time Sea",
   },
   {
     light: "#FFE6F0",
     dark: "#5C1A72",
     border: "255, 230, 240",
-    name: "Lavender"
+    name: "Lavender",
   },
   {
     light: "#78BC61",
     dark: "#131200",
     border: "120, 188, 97",
-    name: "Marsh Lily"
+    name: "Marsh Lily",
   },
   {
     light: "#ffffff",
     dark: "#000000",
     border: "225, 225, 225",
-    name: "B&W"
+    name: "B&W",
   },
 ];
 
@@ -39,7 +40,9 @@ export default function ColorTester() {
 
   // Detect system theme and set initial color scheme
   useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     setThemeIndex(prefersDark ? 1 : 0);
   }, []);
 
@@ -74,7 +77,10 @@ export default function ColorTester() {
   const displayBorder = isSwapped ? convertHexToRGB(theme.dark) : theme.border;
 
   return (
-    <div className="transition duration-400 ease-in-out" style={{ padding: 20 }}>
+    <div
+      className="transition duration-400 ease-in-out"
+      style={{ padding: 20 }}
+    >
       <div
         style={{
           marginBottom: 15,
