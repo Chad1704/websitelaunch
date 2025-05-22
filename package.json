@@ -1,23 +1,27 @@
 {
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbo",
-		"build": "next build"
-	},
-	"dependencies": {
-		"@tailwindcss/postcss": "^4.1.7",
-		"next": "^15.1.7",
-		"postcss": "^8.5.3",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"react-icons": "^5.5.0",
-		"react-multi-carousel": "^2.8.6",
-		"tailwindcss": "^4.1.7"
-	},
-	"devDependencies": {
-		"@types/node": "^22.13.4",
-		"@types/react": "^19.0.8",
-		"@types/react-dom": "^19.0.3",
-		"typescript": "^5.7.3"
-	}
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.3.2",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/mdx": "^2.0.13",
+    "next": "^15.1.7",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-multi-carousel": "^2.8.6",
+    "tailwindcss": "^4.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  }
 }
