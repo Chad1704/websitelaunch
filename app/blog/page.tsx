@@ -16,7 +16,7 @@ export default function BlogPage() {
       </div>
 
       {/* SVG Logo below ColorTester */}
-      <div className="col-start-2 row-start-2">
+      <div className="col-start-2 row-start-2 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 2000 2000"
@@ -46,12 +46,16 @@ export default function BlogPage() {
       </div>
 
       {/* Blog posts container */}
-      <div className="col-start-3 row-start-4 col-span-8 row-span-8  space-y-4">
+      <div className="col-start-3 row-start-4 col-span-8 row-span-8  space-y-4 ">
         {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
-            <div className="border border-light p-4 rounded transition-transform duration-300 ease-in-out hover:scale-x-105 bg-dark">
-              <div className="text-light min-h-3.5 transition">
-                <p className="text-sm bg-light text-dark w-fit px-1.5 rounded-md font-mono">
+          <Link
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+            className="block group test "
+          >
+            <div className="border  border-light p-4 rounded transition-transform duration-300 ease-in-out hover:scale-x-105 bg-dark">
+              <div className="text-light min-h-3.5 transition ">
+                <p className="text-sm bg-light text-dark w-fit px-1.5 rounded-md font-mono ">
                   {post.date}
                 </p>
                 <h2 className="text-xl font-bold pt-3">{post.title}</h2>
@@ -68,7 +72,7 @@ export default function BlogPage() {
                 {post.excerpt}....
                 <div className="pt-4 pb-2 underline hover:underline-offset-2 flex justify-between items-center">
                   <span>Read More</span>
-                  <div className="text-right">
+                  <div className="text-right transition-transform duration-300 ease-in-out text-3xl group-hover:scale-150">
                     <GoArrowUpRight />
                   </div>
                 </div>
