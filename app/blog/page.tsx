@@ -1,6 +1,9 @@
 import { getAllPosts } from "../getAllposts";
 import ColorTester from "@/app/colortester";
+import { GoArrowUpRight } from "react-icons/go";
+
 import Link from "next/link";
+import "./blog.css";
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -43,12 +46,33 @@ export default function BlogPage() {
       </div>
 
       {/* Blog posts container */}
-      <div className="col-start-3 row-start-4 col-span-8 row-span-8 overflow-y-auto space-y-4">
+      <div className="col-start-3 row-start-4 col-span-8 row-span-8  space-y-4">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
-            <div className="border border-light p-4 rounded text-light h transition">
-              <h2 className="text-xl font-bold">{post.title}</h2>
-              <p className="text-sm text-gray-600">{post.date}</p>
+            <div className="border border-light p-4 rounded transition-transform duration-300 ease-in-out hover:scale-x-105 bg-dark">
+              <div className="text-light min-h-3.5 transition">
+                <p className="text-sm bg-light text-dark w-fit px-1.5 rounded-md font-mono">
+                  {post.date}
+                </p>
+                <h2 className="text-xl font-bold pt-3">{post.title}</h2>
+                <div>
+                  {post.tags.map((tag, idx) => (
+                    <div
+                      key={idx}
+                      className="inline-flex transition duration-400 ease-in-out px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono"
+                    >
+                      #{tag}
+                    </div>
+                  ))}
+                </div>
+                {post.excerpt}....
+                <div className="pt-4 pb-2 underline hover:underline-offset-2 flex justify-between items-center">
+                  <span>Read More</span>
+                  <div className="text-right">
+                    <GoArrowUpRight />
+                  </div>
+                </div>
+              </div>
             </div>
           </Link>
         ))}
