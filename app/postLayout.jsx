@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import "./blog/blog.css";
 import { FaTag, FaCalendarAlt, FaClock } from "react-icons/fa";
-import { IoIosArrowRoundBack } from "react-icons/io";
+
 import ColorTester from "./colortester";
 
 function extractHeadings(children) {
@@ -49,9 +49,9 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
   const headings = useMemo(() => extractHeadings(children), [children]);
 
   return (
-    <div className="grid grid-cols-12 min-h-screen bg-dark text-light transition duration-400 ease-in-out">
+    <div className="grid grid-cols-12 h-full  text-light transition duration-400 ease-in-out">
       <article className="prose col-span-9 lg:prose-xl">
-        <div className="px-20 pt-10 blog-post">
+        <div className="px-20  blog-post">
           <h1>{title}</h1>
           <div className="flex items-center gap-2 pluto">
             <FaCalendarAlt />
@@ -76,15 +76,10 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
       </article>
       <div className="col-span-3 card-head-side-l flex flex-col ml-1  space-y-2">
         <div className=" sticky-sidebar-head ">
-          <div className="grid grid-cols-6 grid-rows-6">
-            <div className=" col-start-1 row-start-1 pt-3 pl-3 col-span-2 ">
-              <IoIosArrowRoundBack className=" text-5xl" />
-            </div>
-          </div>
+          <div className="grid grid-cols-6 grid-rows-6"></div>
         </div>
 
-        <aside className="sticky-sidebar h-fit">
-          <div className="by7 text-3xl ml-4 pb-4">Article Tree</div>
+        <aside className="sticky-sidebar h-fit ">
           {headings.map(({ id, text, level }) => (
             <a
               key={id}
