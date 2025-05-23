@@ -3,16 +3,16 @@ import React, { useState, useEffect } from "react";
 
 const colorThemes = [
   {
-    light: "#2BAE66FF",
-    dark: "#fcf6f5ff",
-    border: "43 , 174 , 102 ",
-    name: "Crisp Mint",
-  },
-  {
     light: "#ADEFD1FF",
     dark: "#00203FFF",
     border: "173, 239, 209",
     name: "Night Time Sea",
+  },
+  {
+    light: "#2BAE66FF",
+    dark: "#fcf6f5ff",
+    border: "43 , 174 , 102 ",
+    name: "Crisp Mint",
   },
   {
     light: "#FFE6F0",
@@ -21,9 +21,9 @@ const colorThemes = [
     name: "Lavender",
   },
   {
-    light: "#78BC61",
-    dark: "#131200",
-    border: "120, 188, 97",
+    light: "#131200",
+    dark: "#78BC61",
+    border: "19, 18, 0",
     name: "Marsh Lily",
   },
   {
@@ -37,13 +37,16 @@ const colorThemes = [
 export default function ColorTester() {
   const [themeIndex, setThemeIndex] = useState(0);
   const [isSwapped, setIsSwapped] = useState(false);
+  const [rotations, setRotations] = useState(
+    Array(colorThemes.length).fill(false)
+  );
+  const [hovered, setHovered] = useState(null); // Track hover
 
-  // Detect system theme and set initial color scheme
   useEffect(() => {
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    setThemeIndex(prefersDark ? 1 : 0);
+    setThemeIndex(prefersDark ? 0 : 1);
   }, []);
 
   useEffect(() => {
@@ -72,9 +75,6 @@ export default function ColorTester() {
   }
 
   const theme = colorThemes[themeIndex];
-  const displayLight = isSwapped ? theme.dark : theme.light;
-  const displayDark = isSwapped ? theme.light : theme.dark;
-  const displayBorder = isSwapped ? convertHexToRGB(theme.dark) : theme.border;
 
   return (
     <div
@@ -91,23 +91,62 @@ export default function ColorTester() {
         className="w-fill"
       >
         {colorThemes.map((t, i) => (
-          <button
+          <div
             key={i}
-            onClick={() => setThemeIndex(i)}
-            title={t.name}
-            style={{
-              width: 12,
-              height: 12,
-              transform: "rotate(45deg)",
-              borderRadius: 70,
-              border:
-                i === themeIndex
-                  ? `2px solid ${theme.light}`
-                  : "1px solid #ccc",
-              cursor: "pointer",
-              background: `linear-gradient(to right, ${t.dark} 50%, ${t.light} 50%)`,
-            }}
-          />
+            style={{ position: "relative", display: "inline-block" }}
+            onMouseEnter={() => setHovered(i)}
+            onMouseLeave={() => setHovered(null)}
+          >
+            <button
+              onClick={() => {
+                if (i === themeIndex) {
+                  setIsSwapped(!isSwapped);
+                  setRotations((prev) =>
+                    prev.map((val, index) => (index === i ? !val : val))
+                  );
+                } else {
+                  setThemeIndex(i);
+                  setIsSwapped(false);
+                  setRotations(Array(colorThemes.length).fill(false));
+                }
+              }}
+              style={{
+                width: 12,
+                height: 12,
+                transform: `rotate(${rotations[i] ? 225 : 45}deg)`,
+                transition: "transform 0.4s ease-in-out",
+                borderRadius: 70,
+                border:
+                  i === themeIndex
+                    ? `2px solid ${theme.light}`
+                    : "1px solid #ccc",
+                cursor: "pointer",
+                background: `linear-gradient(to right, ${t.dark} 50%, ${t.light} 50%)`,
+              }}
+            />
+            {hovered === i && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-150%",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  backgroundColor: `${t.dark}`,
+                  color: `${t.light}`,
+                  padding: "4px 8px",
+                  borderRadius: "4px",
+                  fontSize: "0.75rem",
+                  whiteSpace: "nowrap",
+                  pointerEvents: "none",
+                  opacity: 1,
+                  zIndex: 10,
+                }}
+                className="font-mono"
+              >
+                {t.name}
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </div>
