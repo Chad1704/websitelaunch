@@ -2,7 +2,8 @@ import PostLayout from "../../postLayout";
 import Header from "../../header"; // adjust path as needed
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const postModule = await import(`./posts/${slug}.mdx`);
+  const postModule = await import(`../../../posts/${slug}.mdx`);
+
   const Post = postModule.default;
   const metadata = postModule.metadata;
 
