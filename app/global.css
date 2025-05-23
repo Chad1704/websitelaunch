@@ -13,11 +13,6 @@
   src: url("../public/SpaceMono-Regular.ttf") format("truetype"); /* relative path */
 }
 
-@font-face {
-  font-family: "by7_b";
-  src: url("../public/5by7_b.ttf") format("truetype"); /* relative path */
-}
-
 @import "tailwindcss";
 
 @theme {
@@ -71,10 +66,6 @@
 
 .by7 {
   font-family: "by7", sans-serif;
-}
-
-.by7_b {
-  font-family: "by7_b", sans-serif;
 }
 
 .p2 {
