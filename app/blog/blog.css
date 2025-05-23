@@ -75,7 +75,7 @@ em {
 .sticky-sidebar {
   position: sticky;
   top: 1px; /* Adjust based on your header height */
-  max-height: calc(100vh - 80px); /* So it fits vertically */
+  max-height: calc(100vh); /* So it fits vertically */
   overflow-y: auto; /* Allow scrolling inside sidebar if content is long */
 }
 
@@ -84,6 +84,34 @@ em {
   top: 0px; /* Adjust based on your header height */
   height: 1px;
   overflow-y: auto; /* Allow scrolling inside sidebar if content is long */
+}
+
+/* For WebKit browsers */
+.article-tree-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.article-tree-wrapper::-webkit-scrollbar-track {
+  background: var(--color-light); /* or a subtle color */
+}
+
+.article-tree-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-light); /* customize color */
+  scrollbar-color: var(--color-light) transparent;
+  transition: scrollbar-color 0.4s ease-in-out;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.article-tree-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-light);
+}
+
+/* For Firefox */
+.article-tree-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-light) transparent;
 }
 
 /* Links */
