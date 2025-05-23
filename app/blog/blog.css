@@ -74,14 +74,14 @@ em {
 
 .sticky-sidebar {
   position: sticky;
-  top: 1px; /* Adjust based on your header height */
-  max-height: calc(100vh); /* So it fits vertically */
+  top: 190px; /* Adjust based on your header height */
+  max-height: calc(100vh - 190px);
   overflow-y: auto; /* Allow scrolling inside sidebar if content is long */
 }
 
 .sticky-sidebar-head {
   position: sticky;
-  top: 0px; /* Adjust based on your header height */
+  top: 80px; /* Adjust based on your header height */
   height: 1px;
   overflow-y: auto; /* Allow scrolling inside sidebar if content is long */
 }
