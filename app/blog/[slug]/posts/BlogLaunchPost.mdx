@@ -10,25 +10,29 @@ export const metadata = {
 > “Invention, it must be humbly admitted, does not consist in creating out of void, but out of chaos.”  
 > — Mary Shelley, _Frankenstein_
 
-After working on and off for about a year _(Feels like 3)_, I'm finally somewhat happy with this all-new redesign of chadkatz.com. This journey took way, way too long and reflects most of my learning in all things web development since starting from the ground up and teaching myself HTML.
+After working on and off for about a year _(feels like 3)_, I'm finally somewhat happy with this all-new redesign of chadkatz.com. This journey took way, way too long and reflects most of my learning in all things web development since starting from the ground up and teaching myself HTML.
+
+This post will be a bit more informal and more of a story compared to what I would like to post about in the future, but I think it's important to go through the entire story from start to finish and show all of the failures and pitfalls before the finished product.
 
 ### 1. Literal Pitfalls
 
-Randomly, one day around a year ago from this posting, I decided that I would make use of the domain my family had owned for so long and built a website — and thus kicked off the most horrendous programming crusade that I couldn't even fathom.
+Randomly, one day around a year ago from this posting, I decided that I would make use of the domain my family had owned for so long and build a website — and thus kicked off the most horrendous programming crusade that I couldn't even fathom.
 
-This website is built on a less-than-optimal file structure on a React framework I had no idea how to use at the time, and which isn't optimal for this type of static site **(I should have used Astro instead)**, but I foolishly didn't stop and decided that I would learn as I go — a mistake that I am sure to repeat until I either quit programming altogether or become one with the computer. didnt stop and decided that I would learn as I go a mistake that I am sure to repeat until I either quit programming altogether or become one with the computer
+This website is built on a less-than-optimal file structure on a React framework I had no idea how to use at the time, and which isn't optimal for this type of static site **(I should have used Astro instead)**, but I foolishly didn't stop and decided that I would learn as I go — a mistake that I am sure to repeat until I either quit programming altogether or become one with the computer.
 
 ### 2. Design and Redesign and Redesign
 
 The coolest part for me about having my own site was the idea of a _personal brand_ that I could stamp on everything, and I tried.
 
-I watched Figma Tutorials, skimmed UX and UI courses and the best I could come up with at first was this:
+I watched Figma tutorials, skimmed UX and UI courses, and the best I could come up with at first was this:
 
 ![](/alive-post/first-ever-site-draft.PNG)
 
 _incredible right?_
 
-but this would be a good showing compared to some of my more experimental designs:
+I quickly trashed this, thinking it wasn't a good design, but this would be a good showing compared to some of my more experimental designs:
+
+_Sites in the graveyard: 1_
 
 ![](/alive-post/failedDesigns2.png)
 ![](/alive-post/failedDesigns1.png)
@@ -40,13 +44,13 @@ There’s like 20 different designs I'm leaving out to keep this from being a ph
 
 ### 3. Cant Design? Then Steal
 
-Even with the current design of my site being something that I'm proud, of I took **HEAVY** inspiration from others. basically just copying what they did. I will say that I did and always have coded all of my projects myself and never passed someone’s code or design off as my own so quickly here are the current sites I was _inspired_ by that I’ll touch on later
+Even with the current design of my site being something that I'm proud of, I took **HEAVY** inspiration from others—basically just copying what they did. I will say that I did and always have coded all of my projects myself and never passed someone’s code or design off as my own so quickly here are the current sites I was _inspired_ by that I’ll touch on later
 
 [Home Page Design](https://www.tomerlerner.com)
 
 [Blog Design](https://vx6fid.vercel.app/blogs)
 
-But I had a array of insperation sites that I tried to mimic at the time one of which will be more important later on but here’s a few of my favorites
+But I had an array of inspiration sites that I tried to mimic at the time, one of which will be more important later on. Here are a few of my favorites:
 
 [Super simple and clean](https://www.helen-tran.com)
 
@@ -70,7 +74,7 @@ This is the only photo I have of my first ever running site tthat I was, _at the
 Not to say i didnt use chat gpt and ai help for this website **(I Used it more then id like to admit)** but I'm confident that if needed I could redo this entire thing without it.
 I learned nothing from making this and I can’t remake this without AI tools if I tried so it was just a waste of time.
 
-_Sites in the graveyard: 1_
+_Sites in the graveyard: 2_
 
 ### 2. Make Someone Else Make It
 
@@ -112,7 +116,7 @@ I wish I had a photo of my old site but sadly I dont, this was my first site tha
 
 I took it down right before I started making this site without knowing I would need a photo of it
 
-_Sites in the graveyard: 2_
+_Sites in the graveyard: 3_
 
 ### 2. Green Light
 
@@ -122,25 +126,46 @@ I took a few months off from this project after those failed redesigns, and when
 
 But no one else did. And after thinking about it more, they were right. What would employers think when they saw this? Was my entire brand just bold and minimal, with no substance? I needed to pivot — to really think about what I wanted people to feel when they saw this site, as if it were an extension of me.
 
-_Sites in the graveyard: 3_
+_Sites in the graveyard: 4_
 
-### 2. React
+### 3. React
 
-`npx create-next-app@latest`
+Looking more into it I deciedd that learning a framework would be better then just useing pure HTML and CSS with JS. I had heard of React and knew that it was widly used in web development, I had no clue why and what it even did but I decied to run this code in my terminal
+
+`npx create-react-app my-react-app`
 
 ```jsx
-import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-export default function Home() {
+function App() {
   return (
-    <main>
-      <h1>Welcome to Next.js!</h1>
-    </main>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
+
+export default App;
 ```
 
-## Learn What You Love
+<br />
+Then throwing this in the terminal afterwards: `npm run dev`
+
+## Learn What You Hate (What I Hate)
 
 > “Simplicity is the ultimate sophistication.”  
 > — Leonardo da Vinci
@@ -149,7 +174,11 @@ At this point, I was completely lost and had no idea what I was doing. I kept ex
 
 ### 1. No Scroll Bar When Possible
 
+Messing around with ThreeJS and WebGL I would get frustrated at how the models would mess with when scrolling. so for those failed test sites I just made sure that it all fit on one page to avoid needing to figure out how to fix this problem. Doing even more research into other dev sites I noticed that even without the 3D models that the all in one layout looked the best.
+
 ### 2. No Loading
+
+Another thing useing WebGl and ThreeJS showed me is that I have no patience. show even if it only takes a few seconds seeing those loading screens on a website made me irrationaly upset. If something has a loading screen I excpect it to be otherwordly and for what I am capible of doing right now I could not do that.
 
 ### 3. Less Is More
 
@@ -161,7 +190,19 @@ Another failed Site of mine that used no scroll bar, had no loading or unessary 
 
 Its odd because I love that gradient color and i think it goes well with the white but for some reason it just dosnt fit together and i think thats what alot of my websites had. Indivitual good ideas that worked poorly together
 
-_Sites in the graveyard: 4_
+_Sites in the graveyard: 5_
+
+Another example that made me go down this more simple and clean design system was my 2nd to last site seen below
+
+![](/alive-post/failedsite4.png)
+
+you can still see parts of this site that made it into this finished one but overall it was just so much all at once. later on ill show the wireframes I made for this but it was so much noise and just looked super _edgy_.
+
+It had quotes that would type and untype itself with a ASCII effect a row of text on the right that would change based on what button you hoverd over and a 3D ASCII model that would slowly follow your mouse. I think with time the idea could work but it wasnt me. good examples of this that I used as insperation are:
+
+[0x.se](https://0x.se) | [dragonfly.xyz](https://www.dragonfly.xyz) | [offscreencanvas.com WebGl ASCII post](https://offscreencanvas.com/renders/webgl-ascii/)
+
+_Sites in the graveyard: 6_
 
 ## Practical Advice That Made Me Finish This
 
@@ -170,19 +211,49 @@ _Sites in the graveyard: 4_
 
 ### 1. Draw when you can
 
+![](/alive-post/failedsite5.jpg)
+
+This was the wireframe I made at work on the back of a cat can tray. I made a stack of about 10 of these for all possible pages of the site, detailing how it would look, the effects I wanted to implement, and all my designs.
+
+compared to wireframing in Figma or any other online tool I found it to be very rewarding and way more usefull.
+
+So my advice: drop the computer for a bit and sketch out what you think you'd like on paper, and really try to visualize it.
+
 ### 2. Be ok With Being Bad At Drawing
+
+So my drawings sucked. I did end up making the About page as a test for this design and like I mentioned before I didnt like it. But I didnt stop. I kept on drawing and wireframeing until I got to this design. That as I said before I did not come up with it is mostly from [Here](https://www.tomerlerner.com) but I did draw the wireframes for the main page a seemingly useless thing as I was copying someone elses design but It helped me change the few things about it I didnt like.
+
+So don't stop drafting
 
 ### 3. Always Look At Others
 
+I've spoken a lot on this already, but look at what other talented people are doing — how they did it, take what you can from what they did, and use it! Take in as many influences as possible, good and, more importantly, bad, and recognize how and why they ended up that way.
+
 ### 4. Please Read The Docs
+
+A mistake I made when making this was just googling good CSS frameworks and running with it. This led me to smashing my head into a wall learning Tailwind CSS by trial and error. Before starting this iteration of the website, I took a few hours and skimmed the docs, and that alone saved me so much time by allowing me to know how to achieve what I wanted. Even the basic basics of just a grid system — reading that doc before writing a line of code — was the best choice I made.
 
 ### 5. Dont Vibe Code
 
-### 7. Get Input While Testing
+AI is an amazing tool to help! I used it a ton in this project, but with a few caveats:
 
-### 8. Be Ok Without Perfection
+- I made sure to always get an explanation of why or how the code it gave me works. This let me see the AI's thought process and if it matched up with my own, as well as seeing why it did what it did, which helped me be able to do the same without its help.
+
+- I never made it create anything that I would not be capable of doing on my own. Most of the time AI was used was when Stack Overflow was no help and I couldn’t figure it out on my own. Even with this, AI didn’t really do much fixing bugs; it would try and sometimes it would work, but most of the time it would help explain why something acted the way it did, and I still had to fix it by hand.
+
+- It’s super easy and at times fun to just vibe code and feed ChatGPT what you want, test its code, tell it what’s wrong, and repeat. That’s what I did for my first site, but I learned nothing! If someone asked me to remake it without AI, it would take me years! And it didn’t even look good.
+
+### 6. Get Input While Testing
+
+I would constantly get input from others when making this site and all my others. It’s super easy to get tunnel vision and decide on something that you might like but that might not work. Getting others to tell you what works and what doesn’t helps a lot.
+
+### 7. Be Ok Without Perfection
+
+This site is far from perfect. I’m sure I will need to redesign it from the ground up sooner or later, but for now, I think it’s good enough. Chasing perfection will get nothing done, and that’s why it took so long for me to even get this out.
 
 ## Overall Thoughts
 
 > “The journey of a thousand miles begins with one step.”  
 > — Lao Tzu
+
+(LEAVE FOR LAST)
