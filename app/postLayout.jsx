@@ -73,11 +73,11 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
             <span>{time} minutes</span>
           </div>
 
-          <div className="pt-3 pb-10 ">
+          <div className="pt-3  pb-10 ">
             {tags.map((tag, idx) => (
               <div
                 key={idx}
-                className="inline-flex px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono transition duration-400 ease-in-out"
+                className="inline-flex transition duration-400 ease-in-out px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono "
               >
                 #{tag}
               </div>
@@ -87,12 +87,12 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
           {children}
         </div>
       </article>
-      <div className="col-span-3 card-head-side-l flex flex-col ml-1 article-tree-wrapper space-y-2">
+      <div className="col-span-3 card-head-side-l flex flex-col ml-1   article-tree-wrapper space-y-2">
         <div className=" sticky-sidebar-head ">
           <div className="grid grid-cols-6 grid-rows-6"></div>
         </div>
 
-        <aside className="sticky-sidebar h-fit ">
+        <aside className="sticky-sidebar h-fit pt-2 ">
           {headings.map(({ id, text, level }) => (
             <a
               key={id}
