@@ -4,7 +4,7 @@ import ColorTester from "./colortester";
 export default function Header() {
   return (
     <>
-      <div className=" bg-dark h-16 card-head-border transition duration-400 ease-in-out ">
+      <div className="  h-16 card-head-border transition duration-400 ease-in-out ">
         <div className=" grid grid-cols-5">
           <div className=" flex items-center col-start-1  justify-center transition duration-400  ease-in-out">
             <svg

@@ -1,5 +1,6 @@
 import PostLayout from "../../postLayout";
 import Header from "../../header";
+import ColorTester from "../../colortester";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -8,8 +9,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const metadata = postModule.metadata;
 
   return (
-    <>
-      <Header />
+    <div className="bg-dark">
+      <div className="h-fit w-fit">
+        <ColorTester />
+      </div>
       <div className="grid grid-cols-12">
         <div className="col-start-1 col-span-12">
           <PostLayout
@@ -22,6 +25,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </PostLayout>
         </div>
       </div>
-    </>
+    </div>
   );
 }

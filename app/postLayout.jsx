@@ -1,9 +1,53 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import "./blog/blog.css";
 import { FaTag, FaCalendarAlt, FaClock } from "react-icons/fa";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import ColorTester from "./colortester";
+
+function extractHeadings(children) {
+  const headings = [];
+
+  function traverse(nodes) {
+    React.Children.forEach(nodes, (child) => {
+      if (!child) return;
+
+      if (typeof child.type === "string") {
+        const tag = child.type.toLowerCase();
+        if (tag === "h1" || tag === "h2" || tag === "h3") {
+          const id = child.props.id || "";
+          let text = "";
+
+          // Extract text content from the heading's children
+          if (typeof child.props.children === "string") {
+            text = child.props.children;
+          } else if (Array.isArray(child.props.children)) {
+            text = child.props.children
+              .map((c) => (typeof c === "string" ? c : ""))
+              .join("");
+          }
+          headings.push({
+            id,
+            text,
+            level: tag === "h1" ? 1 : tag === "h2" ? 2 : 3,
+          });
+        }
+      }
+
+      if (child.props?.children) {
+        traverse(child.props.children);
+      }
+    });
+  }
+
+  traverse(children);
+  return headings;
+}
 
 export default function PostLayout({ children, tags = [], title, date, time }) {
+  // Memoize heading extraction so it only recalculates when children change
+  const headings = useMemo(() => extractHeadings(children), [children]);
+
   return (
     <div className="grid grid-cols-12 min-h-screen bg-dark text-light transition duration-400 ease-in-out">
       <article className="prose col-span-9 lg:prose-xl">
@@ -20,7 +64,7 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
             {tags.map((tag, idx) => (
               <div
                 key={idx}
-                className=" inline-flex px-2 mr-2 mb-2 underline  text-light text-sm font-mono transition duration-400 ease-in-out"
+                className="inline-flex px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono transition duration-400 ease-in-out"
               >
                 #{tag}
               </div>
@@ -30,52 +74,29 @@ export default function PostLayout({ children, tags = [], title, date, time }) {
           {children}
         </div>
       </article>
+      <div className="col-span-3 card-head-side-l flex flex-col ml-1  space-y-2">
+        <div className=" sticky-sidebar-head ">
+          <div className="grid grid-cols-6 grid-rows-6">
+            <div className=" col-start-1 row-start-1 pt-3 pl-3 col-span-2 ">
+              <IoIosArrowRoundBack className=" text-5xl" />
+            </div>
+          </div>
+        </div>
 
-      <div className="col-span-3 card-head-side-l pt-10 ">
-        <aside className="h-fit grid grid-cols-3 grid-rows-3 ml-1 tags-b-border ">
-          {/* Calendar Icon (Row 1) */}
-          <div className="col-start-1 row-start-1 flex justify-center items-start h-full">
-            <div className="card-arr-border-r backround-icon p-1.5 rounded-lg">
-              <FaCalendarAlt className="text-3xl text-dark transition duration-400 ease-in-out" />
-            </div>
-          </div>
-          {/* Test Text (next to Calendar Icon) */}
-          <div className="col-start-2 row-start-1 col-span-5 flex items-start justify-start">
-            <div className="text-sm text-light font-mono mt-1">
-              Published on <br />
-              {date}
-            </div>
-          </div>
-          {/* Clock Icon (Row 2) */}
-          <div className="col-start-1 row-start-2 flex justify-center items-start h-full">
-            <div className="card-arr-border-r backround-icon p-1.5 rounded-lg">
-              <FaClock className="text-3xl text-dark transition duration-400 ease-in-out" />
-            </div>
-          </div>
-          {/* Test Text (next to Clock Icon) */}
-          <div className="col-start-2 row-start-2 col-span-5 flex items-start justify-start">
-            <div className="text-sm text-light font-mono mt-1 mr-1">
-              Read time: {time} minutes
-            </div>
-          </div>
-
-          {/* Tag Icon (Row 3) */}
-          <div className="col-start-1 row-start-3 flex justify-center items-start h-full">
-            <div className="card-arr-border-r backround-icon p-1.5 rounded-lg">
-              <FaTag className="text-3xl text-dark transition duration-400 ease-in-out" />
-            </div>
-          </div>
-          {/* Tags (next to Tag Icon) */}
-          <div className="col-start-2 row-start-3 col-span-5 flex justify-start flex-wrap">
-            {tags.map((tag, idx) => (
-              <div
-                key={idx}
-                className="inline-flex px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono transition duration-400 ease-in-out"
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
+        <aside className="sticky-sidebar h-fit">
+          <div className="by7 text-3xl ml-4 pb-4">Article Tree</div>
+          {headings.map(({ id, text, level }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className="text-light treeBar py-1.5 mr-1 block"
+              style={{
+                paddingLeft: level === 2 ? "1rem" : level === 3 ? "3rem" : "0",
+              }}
+            >
+              {text}
+            </a>
+          ))}
         </aside>
       </div>
     </div>

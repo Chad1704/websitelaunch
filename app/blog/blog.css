@@ -51,6 +51,10 @@ h6 {
   color: #aaa; /* slightly muted for smallest heading */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Paragraph */
 p {
   font-family: "plutosans", monospace;
@@ -68,7 +72,32 @@ em {
   font-style: italic;
 }
 
+.sticky-sidebar {
+  position: sticky;
+  top: 0px; /* Adjust based on your header height */
+  max-height: calc(100vh - 80px); /* So it fits vertically */
+  overflow-y: auto; /* Allow scrolling inside sidebar if content is long */
+}
+
+.sticky-sidebar-head {
+  position: sticky;
+  top: 0px; /* Adjust based on your header height */
+  height: 80px;
+  overflow-y: hidden; /* Allow scrolling inside sidebar if content is long */
+}
+
 /* Links */
+
+.treeBar {
+  text-decoration: none;
+  background-color: transparent;
+  font-family: "Space Mono";
+}
+
+.treeBar:hover {
+  background-color: rgba(209, 183, 183, 0.1);
+}
+
 a {
   font-family: "Space Mono", monospace;
   text-decoration: underline;
