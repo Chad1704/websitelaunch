@@ -5,7 +5,7 @@ function Hero() {
   return (
     <>
       <div className="grid grid-cols-12 grid-rows-12 h-full w-full">
-        <div className="col-span-2 row-span-2 col-start-2 row-start-2 ">
+        <div className="col-span-2 row-span-2 col-start-2 row-start-2 hover:-translate-y-4 duration-300 h-fit w-fit ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 2000 2000"
