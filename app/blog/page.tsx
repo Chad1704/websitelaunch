@@ -1,28 +1,21 @@
 import { getAllPosts } from "../getAllposts";
 import ColorTester from "@/app/colortester";
 import { GoArrowUpRight } from "react-icons/go";
-
 import Link from "next/link";
 import "./blog.css";
-
-const all_tags = [
-  {
-    tags: ["llm", "ai", "neural networks", "transformers", "beginners"],
-  },
-];
 
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="bg-dark min-h-screen h-fit grid grid-rows-12 grid-cols-12">
+    <div className="bg-dark min-h-screen h-fit grid grid-rows-12 no-underline grid-cols-12">
       {/* Top-right SVG with ColorTester */}
       <div className="col-start-11 row-start-1">
         <ColorTester />
       </div>
 
       {/* SVG Logo below ColorTester */}
-      <div className="col-start-2 row-start-2  h-fit w-fit hover:-translate-y-4 duration-300 ">
+      <div className="col-start-2 no-underline row-start-2 h-fit w-fit hover:-translate-y-4 duration-300">
         <a href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +24,7 @@ export default function BlogPage() {
           >
             <g>
               <path
-                className="transition duration-400 ease-in-out"
+                className="transition  duration-400 ease-in-out"
                 style={{ opacity: 1, fill: "var(--color-light)" }}
                 d="M 1604.5,715.5 C 1609.24,715.119 1613.9,714.286 1618.5,713C 1659.21,702.327 1699.88,691.66 1740.5,681C 1765.5,680.5 1790.5,680.333 1815.5,680.5C 1799.89,744.409 1784.72,808.409 1770,872.5C 1671.02,966.477 1571.69,1060.14 1472,1153.5C 1471.13,1154.87 1470.63,1156.37 1470.5,1158C 1510.64,1268.78 1551.48,1379.28 1593,1489.5C 1670.39,1554.54 1747.55,1620.04 1824.5,1686C 1711.17,1686.67 1597.83,1686.67 1484.5,1686C 1483.67,1685.09 1482.67,1684.42 1481.5,1684C 1352.97,1554.14 1223.81,1424.97 1094,1296.5C 1093.67,1189.83 1093.33,1083.17 1093,976.5C 1083.13,979.237 1073.13,981.571 1063,983.5C 1011.86,992.617 961.532,1002.28 912,1012.5C 911.228,1012.36 910.561,1012.02 910,1011.5C 902.527,1013.52 895.027,1015.35 887.5,1017C 855.184,1023.09 822.851,1029.09 790.5,1035C 871.833,1035.5 953.166,1035.67 1034.5,1035.5C 1034.83,1124.17 1034.5,1212.84 1033.5,1301.5C 973.113,1362.55 912.446,1423.22 851.5,1483.5C 1007.89,1551.52 1163.56,1618.85 1318.5,1685.5C 926.167,1686.5 533.834,1686.83 141.5,1686.5C 141.351,1683.39 141.851,1680.39 143,1677.5C 169.411,1610.91 195.911,1543.58 222.5,1475.5C 286.194,1411.81 349.86,1348.14 413.5,1284.5C 466.792,1283.67 520.126,1283.17 573.5,1283C 518.63,1263.9 463.963,1244.23 409.5,1224C 407.246,1222.85 404.913,1222.52 402.5,1223C 340.221,1284.61 278.221,1346.61 216.5,1409C 215.552,1409.48 214.552,1409.65 213.5,1409.5C 213.167,1306.16 213.5,1202.83 214.5,1099.5C 509.291,864.133 803.624,628.967 1097.5,394C 1124.35,366.764 1151.35,339.764 1178.5,313C 1248.83,312.333 1319.17,312.333 1389.5,313C 1532.72,354.215 1675.72,395.548 1818.5,437C 1820.89,439.793 1822.72,442.959 1824,446.5C 1835,478.847 1846,511.181 1857,543.5C 1857.95,546.432 1858.45,549.432 1858.5,552.5C 1857.45,552.351 1856.45,552.517 1855.5,553C 1771.54,607.876 1687.87,662.043 1604.5,715.5 Z M 1309.5,393.5 C 1359.01,393.736 1394.84,415.736 1417,459.5C 1433.33,501.326 1427.99,539.992 1401,575.5C 1367.63,611.448 1327.13,622.781 1279.5,609.5C 1223.63,585.958 1199.29,543.791 1206.5,483C 1218.12,436.412 1247.29,407.246 1294,395.5C 1299.34,395.02 1304.5,394.353 1309.5,393.5 Z M 1604.5,715.5 C 1604.16,717.225 1603.16,717.725 1601.5,717C 1602.53,716.487 1603.53,715.987 1604.5,715.5 Z"
               />
@@ -41,44 +34,41 @@ export default function BlogPage() {
       </div>
 
       {/* Title and subtitle */}
-      <div className="col-start-3 row-start-2 col-span-8">
-        <div className="by7 text-3xl text-light">Blog</div>
+      <div className="col-start-3 row-start-2  col-span-8">
+        <div className="by7 text-3xl text-light">Blog Posts</div>
         <div className="font-mono text-light opacity-80">
           Project updates and overall thoughts
         </div>
       </div>
 
-      {/* Lookup bar & tags placeholder */}
-      <div className="col-start-3 row-start-3 col-span-8  text-light p-2">
-        <div className="border-light bg-light pb-2  rounded-md w-fill text-dark">
-          Bar
-        </div>
-        <div className="pt-4">
-          {all_tags[0].tags.map((tag, idx) => (
-            <div
-              key={idx}
-              className="inline-flex transition duration-400 ease-in-out px-2 mr-2 mb-2 rounded-full border border-light text-light text-sm font-mono"
-            >
-              #{tag}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Blog posts container */}
-      <div className="col-start-3 row-start-4 col-span-8 row-span-8  space-y-4 ">
+      <div className="col-start-3 no-underline row-start-4 col-span-8 row-span-8 space-y-4">
         {posts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="block group test "
+            className="block group relative  test"
           >
-            <div className="border  border-light p-4 rounded transition-transform duration-300 ease-in-out hover:scale-x-105 bg-dark">
-              <div className="text-light min-h-3.5 transition ">
-                <p className="text-sm bg-light text-dark w-fit px-1.5 rounded-md font-mono ">
+            <div className="relative border no-underline border-light p-4 rounded transition-transform duration-300 ease-in-out hover:scale-x-105 bg-dark overflow-hidden">
+              {/* Background image on hover */}
+              <div
+                className="absolute inset-0 z-0 opacity-0  group-hover:opacity-20 transition-opacity duration-300"
+                style={{
+                  backgroundImage: `url(${post.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+
+              {/* Foreground content */}
+              <div className="relative z-10 text-light min-h-3.5 no-underline transition">
+                <p className="text-sm bg-light text-dark w-fit px-1.5 no-underline rounded-md font-mono">
                   {post.date}
                 </p>
-                <h2 className="text-xl font-bold pt-3">{post.title}</h2>
+                <h2 className="text-xl font-bold no-underline  pt-3">
+                  {post.title}
+                </h2>
                 <div>
                   {post.tags.map((tag, idx) => (
                     <div
@@ -89,7 +79,7 @@ export default function BlogPage() {
                     </div>
                   ))}
                 </div>
-                {post.excerpt}....
+                {post.excerpt}...
                 <div className="pt-4 pb-2 underline hover:underline-offset-2 flex justify-between items-center">
                   <span>Read More</span>
                   <div className="text-right transition-transform duration-300 ease-in-out text-3xl group-hover:scale-150">

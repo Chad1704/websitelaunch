@@ -16,19 +16,19 @@ const CustomLeftArrow = ({ onClick }) => (
       onClick={onClick}
       className="absolute left-0  duration-400 ease-in-out top-1/2 transform -translate-y-1/2 z-10 p-2 transition group"
     >
-      <GoChevronLeft className="text-5xl h-full w-full transition-transform duration-200 ease-in-out group-hover:scale-110" />
+      <GoChevronLeft className="text-5xl h-full w-full transition-transform  duration-200 ease-in-out group-hover:scale-110" />
     </button>
   </div>
 );
 
 // Custom Right Arrow Component
 const CustomRightArrow = ({ onClick }) => (
-  <div className=" transition duration-400 ease-in-out text-shadow-md text-light opacity-70 hover:opacity-100">
+  <div className=" transition duration-400 ease-in-out text-shadow-md  text-light opacity-70 hover:opacity-100">
     <button
       onClick={onClick}
       className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 transition"
     >
-      <GoChevronRight className="text-5xl  h-full w-full hover" />
+      <GoChevronRight className="text-5xl  h-full w-full hover " />
     </button>
   </div>
 );
@@ -37,16 +37,16 @@ const CustomRightArrow = ({ onClick }) => (
 function WithStyles({ title, tags, image, link, desc }) {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+    <a href={link} target="_blank" rel="noopener noreferrer ">
       <div
-        className="relative grid grid-cols-10 grid-rows-10 w-full h-64 card-border text-light transition duration-400 ease-in-out hover:bg-light hover:text-dark overflow-hidden"
+        className="relative grid grid-cols-10 grid-rows-10 w-full h-64 card-border  text-light transition duration-400 ease-in-out hover:bg-light hover:text-dark overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Background image layer */}
         {isHovered && image && (
           <div
-            className="absolute inset-0 z-0 transition-transform duration-200 ease-in-out"
+            className="absolute inset-0 z-0 transition-transform  duration-200 ease-in-out"
             style={{
               backgroundImage: `url(${image})`,
               backgroundSize: "cover",
@@ -58,7 +58,7 @@ function WithStyles({ title, tags, image, link, desc }) {
         )}
 
         {/* Foreground content */}
-        <div className="relative z-10 col-start-1 ml-5 col-span-10 row-start-2">
+        <div className="relative z-10 col-start-1 ml-5 col-span-10  row-start-2">
           <h2 className="text-3xl by7">{title}</h2>
           <div className="mt-2 flex flex-col gap-1 opacity-70">
             {tags?.map((tag, idx) => (
@@ -69,7 +69,7 @@ function WithStyles({ title, tags, image, link, desc }) {
           </div>
         </div>
 
-        <div className="relative z-10 flex row-start-7 col-start-9 text-2xl text-dark">
+        <div className="relative z-10 flex row-start-7 col-start-9 text-2xl  text-dark">
           <GoArrowUpRight />
         </div>
       </div>

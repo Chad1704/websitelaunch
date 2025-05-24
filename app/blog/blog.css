@@ -156,6 +156,9 @@ blockquote {
   padding-left: 1rem;
   font-style: italic;
   opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-right: 20px;
+  width: fit-content;
 }
 
 /* Lists */
